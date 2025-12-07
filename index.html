@@ -5,15 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>•EARNING × RDS TEAM•</title>
   <style>
-    /* GOLD AI BOT-style colors: dark charcoal bg, soft dark cards, gold header accent */
     :root{
-      --bg:#1b1e24;           /* main background like GOLD */
-      --card:#23262d;         /* card surface */
-      --text:#f5f7fb;         /* primary text on dark */
+      --bg:#1b1e24;           /* dark background */
+      --card:#ffb347;         /* মিষ্টি কুমড়ার মতো box color */
+      --text:#000;            /* black text inside orange boxes */
       --muted:#b8bdc7;        /* secondary text */
       --gold:#d4af37;         /* header gold accent */
-      --accent:#ff3b30;       /* red accent for icons/text (your preference) */
-      --shadow:0 10px 24px rgba(0,0,0,0.35);
+      --accent:#ff3b30;       /* red accent */
+      --shadow:0 6px 16px rgba(0,0,0,0.25);
       --radius:16px;
     }
     *{box-sizing:border-box}
@@ -21,13 +20,11 @@
       margin:0;
       font-family: "Segoe UI", system-ui, -apple-system, Arial;
       background:var(--bg);
-      color:var(--text);
+      color:#f5f7fb;
     }
-    a{color:var(--text);text-decoration:none}
-
     .wrap{max-width:520px;margin:auto;padding:14px 14px 88px}
 
-    /* Header like GOLD: dark bar + gold title */
+    /* Header */
     .header{
       background:#111418;
       color:var(--gold);
@@ -37,28 +34,24 @@
       box-shadow:var(--shadow);
       margin:10px 0 14px;
     }
-    .header h1{margin:0;font-size:20px;letter-spacing:0.5px}
+    .header h1{margin:0;font-size:20px}
     .header .sub{margin-top:6px;font-size:12px;color:#dcdcdc}
 
-    /* Small user info */
-    .userInfo{
-      display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0;
-    }
+    /* Card boxes for Balance, Typing, Referrals, etc. */
     .card{
       background:var(--card);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
       padding:14px;
     }
-    .label{font-size:13px;color:var(--muted)}
-    .value{margin-top:6px;font-weight:700;font-size:18px;color:var(--text)}
+    .label{font-size:13px;color:#111}
+    .value{margin-top:6px;font-weight:700;font-size:18px;color:#000}
 
-    /* Your existing top metrics: Balance / Typing / Referrals / User ID */
     .metrics{
       display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0;
     }
 
-    /* Two history buttons (keep your features) */
+    /* History buttons */
     .actions{
       display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0;
     }
@@ -71,57 +64,32 @@
       font-weight:700;
       box-shadow:var(--shadow);
       cursor:pointer;
-      user-select:none;
     }
 
-    /* Stats grid styled like GOLD (you can map later) */
+    /* Stats */
     .stats{
       display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0;
     }
-    .stat .slabel{font-size:13px;color:var(--muted)}
-    .stat .sval{margin-top:6px;font-size:16px;font-weight:700;color:var(--text)}
+    .stat .slabel{font-size:13px;color:#111}
+    .stat .sval{margin-top:6px;font-size:16px;font-weight:700;color:#000}
     .refEarn .sval{color:var(--accent)}
 
-    /* Referral link (keep your link) */
+    /* Referral link */
     .ref{margin:14px 0}
-    .ref .rlab{font-size:13px;color:var(--muted)}
+    .ref .rlab{font-size:13px;color:#111}
     .ref .rlink{margin-top:6px;font-size:14px;color:var(--accent);word-break:break-word}
 
-    /* Middle menu: KEEP YOUR FEATURES (Dashboard, Profile Settings, Referral Users, Tasks, Withdraw, Support/Telegram, Logout) */
-    .menu{
-      margin:14px 0;
-      background:var(--card);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      overflow:hidden;
-    }
-    .menuItem{
-      display:flex;align-items:center;gap:12px;
-      padding:12px 14px;border-bottom:1px solid rgba(255,255,255,0.06);cursor:pointer;
-    }
-    .menuItem:last-child{border-bottom:none}
-    .miIcon{
-      width:30px;height:30px;border-radius:8px;background:#0f1216;color:var(--accent);
-      display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;
-    }
-    .miLabel{font-size:14px;color:var(--text)}
-
-    /* Bottom nav styled like GOLD but mapped to your sections */
+    /* Bottom nav with emoji icons */
     .bottomNav{
-      position:fixed;left:0;right:0;bottom:0;background:#111418;border-top:1px solid rgba(255,255,255,0.06);
-      display:grid;grid-template-columns:repeat(4,1fr);gap:0;padding:8px 10px;
+      position:fixed;left:0;right:0;bottom:0;background:#111418;
+      display:grid;grid-template-columns:repeat(4,1fr);padding:8px 10px;
       box-shadow:0 -10px 20px rgba(0,0,0,0.35);
     }
     .bnItem{
       display:flex;flex-direction:column;align-items:center;gap:6px;
       color:#e9ecf4;font-size:11px;cursor:pointer;
     }
-    .bnIcon{
-      width:28px;height:28px;border-radius:8px;background:#0f1216;color:var(--accent);
-      display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;
-    }
-
-    @media (hover:none){ .btn,.menuItem,.bnItem{padding:12px} }
+    .bnIcon{font-size:20px}
   </style>
 </head>
 <body>
@@ -132,7 +100,7 @@
     </div>
 
     <!-- User info -->
-    <div class="userInfo">
+    <div class="metrics">
       <div class="card">
         <div class="label">User</div>
         <div class="value">Sadin11gps</div>
@@ -143,7 +111,7 @@
       </div>
     </div>
 
-    <!-- Your metrics -->
+    <!-- Balance / Typing -->
     <div class="metrics">
       <div class="card">
         <div class="label">Balance</div>
@@ -154,6 +122,8 @@
         <div class="value">৳ 0.00</div>
       </div>
     </div>
+
+    <!-- Referrals / Status -->
     <div class="metrics">
       <div class="card">
         <div class="label">Referrals</div>
@@ -165,13 +135,13 @@
       </div>
     </div>
 
-    <!-- Keep your two history buttons -->
+    <!-- History buttons -->
     <div class="actions">
-      <div class="btn" data-action="task-history">Task History</div>
-      <div class="btn" data-action="withdraw-history">Withdraw History</div>
+      <div class="btn">Task History</div>
+      <div class="btn">Withdraw History</div>
     </div>
 
-    <!-- GOLD-style stats (optional mapping to your logic) -->
+    <!-- Stats -->
     <div class="stats">
       <div class="card stat">
         <div class="slabel">Total Deposit</div>
@@ -191,69 +161,33 @@
       </div>
     </div>
 
-    <!-- Referral earn card -->
+    <!-- Referral Earn -->
     <div class="card stat refEarn">
       <div class="slabel">Referral Earn</div>
       <div class="sval">৳ 0.00</div>
     </div>
 
-    <!-- Referral link (keep your pattern) -->
+    <!-- Referral link -->
     <div class="card ref">
       <div class="rlab">Your Referral Link</div>
       <div class="rlink">https://best-earning-rds.netlify.app/register.html?ref=USER_ID</div>
     </div>
-
-    <!-- KEEP YOUR MENU ITEMS -->
-    <div class="menu">
-      <div class="menuItem" data-action="dashboard">
-        <div class="miIcon">DB</div><div class="miLabel">Dashboard</div>
-      </div>
-      <div class="menuItem" data-action="profile-settings">
-        <div class="miIcon">PS</div><div class="miLabel">Profile Settings</div>
-      </div>
-      <div class="menuItem" data-action="referral-users">
-        <div class="miIcon">RU</div><div class="miLabel">Referral Users</div>
-      </div>
-      <div class="menuItem" data-action="tasks">
-        <div class="miIcon">TS</div><div class="miLabel">Tasks</div>
-      </div>
-      <div class="menuItem" data-action="withdraw">
-        <div class="miIcon">WD</div><div class="miLabel">Withdraw</div>
-      </div>
-      <div class="menuItem" data-action="support">
-        <div class="miIcon">SP</div><div class="miLabel">Support</div>
-      </div>
-      <div class="menuItem" data-action="logout">
-        <div class="miIcon">LO</div><div class="miLabel">Logout</div>
-      </div>
-    </div>
   </div>
 
-  <!-- Bottom nav mapped to your features -->
+  <!-- Bottom nav with emoji icons -->
   <div class="bottomNav">
-    <div class="bnItem" data-action="dashboard">
-      <div class="bnIcon">H</div><div>Home</div>
+    <div class="bnItem">
+      <div class="bnIcon">🏠</div><div>Home</div>
     </div>
-    <div class="bnItem" data-action="tasks">
-      <div class="bnIcon">T</div><div>Tasks</div>
+    <div class="bnItem">
+      <div class="bnIcon">📋</div><div>Tasks</div>
     </div>
-    <div class="bnItem" data-action="withdraw">
-      <div class="bnIcon">W</div><div>Withdraw</div>
+    <div class="bnItem">
+      <div class="bnIcon">💸</div><div>Withdraw</div>
     </div>
-    <div class="bnItem" data-action="profile-settings">
-      <div class="bnIcon">P</div><div>Profile</div>
+    <div class="bnItem">
+      <div class="bnIcon">👤</div><div>Profile</div>
     </div>
   </div>
-
-  <script>
-    // Keep hooks simple — later you can route to pages
-    document.addEventListener('click',(e)=>{
-      const el = e.target.closest('[data-action]');
-      if(!el) return;
-      const act = el.getAttribute('data-action');
-      console.log('Clicked:', act);
-      // TODO: তোমার পেজ রাউটিং / modal / link navigation এখানে বসাও
-    });
-  </script>
 </body>
 </html>
