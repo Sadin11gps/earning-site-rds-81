@@ -8,11 +8,10 @@
     :root{
       --bg:#1b1e24;
       --pumpkin:#ffb347;   /* মিষ্টি কুমড়া */
-      --text:#000;
       --gold:#d4af37;
       --accent:#ff3b30;
-      --shadow:0 4px 12px rgba(0,0,0,0.15);
-      --radius:16px;
+      --shadow:0 2px 6px rgba(0,0,0,0.12);
+      --radius:12px;
     }
     body{
       margin:0;
@@ -35,59 +34,58 @@
     .header h1{margin:0;font-size:20px}
     .header .sub{margin-top:6px;font-size:12px;color:#dcdcdc}
 
-    /* Pumpkin boxes */
-    .card{
+    /* Offer-box style */
+    .offer-box{
       background: var(--pumpkin);
+      border-left: 6px solid #007bff; /* সাইডে নীল */
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 14px;
+      padding: 12px;
       margin-bottom: 12px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       text-align: center;
     }
-    .label{font-size:14px;color:#222}
-    .value{margin-top:6px;font-weight:700;font-size:18px;color:#000}
+    .label{font-size:14px;color:#222;font-weight:600}
+    .value{margin-top:4px;font-size:16px;font-weight:700;color:#000}
 
     .metrics{
-      display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0;
+      display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0;
     }
 
     /* History buttons */
     .actions{
-      display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0;
+      display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0;
     }
     .btn{
       background:#0f1216;
       color:var(--accent);
       text-align:center;
-      padding:12px;
-      border-radius:12px;
+      padding:10px;
+      border-radius:10px;
       font-weight:700;
       box-shadow:var(--shadow);
     }
 
     /* Stats */
     .stats{
-      display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0;
+      display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0;
     }
     .stat .slabel{font-size:14px;color:#222}
-    .stat .sval{margin-top:6px;font-size:16px;font-weight:700;color:#000}
+    .stat .sval{margin-top:4px;font-size:15px;font-weight:700;color:#000}
     .refEarn .sval{color:var(--accent)}
 
     /* Referral box */
     .ref{
-      background: #fff;
+      background:#fff;
+      border-left:6px solid purple; /* সাইডে বেগুনি */
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 14px;
-      margin: 16px 0;
+      padding: 12px;
+      margin: 14px 0;
       text-align: center;
     }
     .rlab{font-size:14px;color:#222;font-weight:600}
     .rbonus{font-size:13px;color:#444;margin-bottom:6px}
-    .rlink{margin-top:6px;font-size:15px;color:#28a745;word-break:break-word}
+    .rlink{font-size:14px;color:#28a745;word-break:break-word}
 
     /* Bottom nav */
     .bottomNav{
@@ -108,20 +106,20 @@
 
     <!-- User info -->
     <div class="metrics">
-      <div class="card"><div class="label">User</div><div class="value">Sadin11gps</div></div>
-      <div class="card"><div class="label">User ID</div><div class="value">#69</div></div>
+      <div class="offer-box"><div class="label">User</div><div class="value">Sadin11gps</div></div>
+      <div class="offer-box"><div class="label">User ID</div><div class="value">#69</div></div>
     </div>
 
     <!-- Balance / Task -->
     <div class="metrics">
-      <div class="card"><div class="label">Balance</div><div class="value">৳ 0.00</div></div>
-      <div class="card"><div class="label">Task</div><div class="value">৳ 0.00</div></div>
+      <div class="offer-box"><div class="label">Balance</div><div class="value">৳ 0.00</div></div>
+      <div class="offer-box"><div class="label">Task</div><div class="value">৳ 0.00</div></div>
     </div>
 
     <!-- Referrals / Status -->
     <div class="metrics">
-      <div class="card"><div class="label">Referrals</div><div class="value">0</div></div>
-      <div class="card"><div class="label">Status</div><div class="value">Active</div></div>
+      <div class="offer-box"><div class="label">Referrals</div><div class="value">0</div></div>
+      <div class="offer-box"><div class="label">Status</div><div class="value">Active</div></div>
     </div>
 
     <!-- History buttons -->
@@ -132,14 +130,14 @@
 
     <!-- Stats -->
     <div class="stats">
-      <div class="card stat"><div class="slabel">Total Deposit</div><div class="sval">৳ 0.00</div></div>
-      <div class="card stat"><div class="slabel">Total Withdraw</div><div class="sval">৳ 0.00</div></div>
-      <div class="card stat"><div class="slabel">Today Earn</div><div class="sval">৳ 0.00</div></div>
-      <div class="card stat"><div class="slabel">Total Earn</div><div class="sval">৳ 0.00</div></div>
+      <div class="offer-box stat"><div class="slabel">Total Deposit</div><div class="sval">৳ 0.00</div></div>
+      <div class="offer-box stat"><div class="slabel">Total Withdraw</div><div class="sval">৳ 0.00</div></div>
+      <div class="offer-box stat"><div class="slabel">Today Earn</div><div class="sval">৳ 0.00</div></div>
+      <div class="offer-box stat"><div class="slabel">Total Earn</div><div class="sval">৳ 0.00</div></div>
     </div>
 
     <!-- Referral Earn -->
-    <div class="card stat refEarn">
+    <div class="offer-box stat refEarn">
       <div class="slabel">Referral Earn</div>
       <div class="sval">৳ 0.00</div>
     </div>
@@ -147,7 +145,7 @@
     <!-- Referral link box -->
     <div class="ref">
       <div class="rlab">Your Referral Link</div>
-      <div class="rbonus">প্রতি রেফারে 20 টাকা এবং VIP থেকে 30% পাবেন।</div>
+      <div class="rbonus">প্রতি রেফারে ২০ টাকা এবং VIP থেকে ৩০% পাবেন।</div>
       <div class="rlink">https://best-earning-rds.netlify.app/register.html?ref=USER_ID</div>
     </div>
   </div>
