@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>•EARNING × RDS TEAM•</title>
   <style>
+    /* GOLD AI BOT-style colors: dark charcoal bg, soft dark cards, gold header accent */
     :root{
-      --bg:#f8f8f8;
-      --card:#ffffff;
-      --text:#111;
-      --muted:#666;
-      --primary:#111;
-      --accent:#d00101;       /* red text accents */
-      --gold:#ffd700;         /* gold header accent */
-      --shadow:0 6px 16px rgba(0,0,0,0.08);
-      --radius:14px;
+      --bg:#1b1e24;           /* main background like GOLD */
+      --card:#23262d;         /* card surface */
+      --text:#f5f7fb;         /* primary text on dark */
+      --muted:#b8bdc7;        /* secondary text */
+      --gold:#d4af37;         /* header gold accent */
+      --accent:#ff3b30;       /* red accent for icons/text (your preference) */
+      --shadow:0 10px 24px rgba(0,0,0,0.35);
+      --radius:16px;
     }
     *{box-sizing:border-box}
     body{
@@ -23,27 +23,26 @@
       background:var(--bg);
       color:var(--text);
     }
-    .wrap{max-width:520px;margin:auto;padding:14px 14px 84px}
+    a{color:var(--text);text-decoration:none}
 
-    /* Header */
+    .wrap{max-width:520px;margin:auto;padding:14px 14px 88px}
+
+    /* Header like GOLD: dark bar + gold title */
     .header{
-      background:#111;
+      background:#111418;
       color:var(--gold);
       border-radius:var(--radius);
-      padding:14px 16px;
+      padding:16px 18px;
       text-align:center;
       box-shadow:var(--shadow);
-      margin:8px 0 14px;
+      margin:10px 0 14px;
     }
     .header h1{margin:0;font-size:20px;letter-spacing:0.5px}
-    .header .sub{margin-top:4px;font-size:12px;color:#ddd}
+    .header .sub{margin-top:6px;font-size:12px;color:#dcdcdc}
 
-    /* Top wallets row: Main + Trading */
-    .walletRow{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-      margin:12px 0;
+    /* Small user info */
+    .userInfo{
+      display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0;
     }
     .card{
       background:var(--card);
@@ -51,22 +50,20 @@
       box-shadow:var(--shadow);
       padding:14px;
     }
-    .label{
-      font-size:13px;color:var(--muted)
-    }
-    .value{
-      margin-top:6px;font-weight:700;font-size:18px;color:var(--text)
+    .label{font-size:13px;color:var(--muted)}
+    .value{margin-top:6px;font-weight:700;font-size:18px;color:var(--text)}
+
+    /* Your existing top metrics: Balance / Typing / Referrals / User ID */
+    .metrics{
+      display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0;
     }
 
-    /* Action buttons: Deposit / Withdraw / Records / Account */
+    /* Two history buttons (keep your features) */
     .actions{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-      margin:12px 0;
+      display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0;
     }
     .btn{
-      background:#000;
+      background:#0f1216;
       color:var(--accent);
       text-align:center;
       padding:12px;
@@ -77,17 +74,20 @@
       user-select:none;
     }
 
-    /* Stats grid like GOLD: totals & profits */
+    /* Stats grid styled like GOLD (you can map later) */
     .stats{
       display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0;
     }
     .stat .slabel{font-size:13px;color:var(--muted)}
-    .stat .sval{margin-top:6px;font-size:16px;font-weight:700}
-
-    /* Referral earn single card */
+    .stat .sval{margin-top:6px;font-size:16px;font-weight:700;color:var(--text)}
     .refEarn .sval{color:var(--accent)}
 
-    /* Middle list: Account Info / KYC / My Team / Withdraw Setting / Apps */
+    /* Referral link (keep your link) */
+    .ref{margin:14px 0}
+    .ref .rlab{font-size:13px;color:var(--muted)}
+    .ref .rlink{margin-top:6px;font-size:14px;color:var(--accent);word-break:break-word}
+
+    /* Middle menu: KEEP YOUR FEATURES (Dashboard, Profile Settings, Referral Users, Tasks, Withdraw, Support/Telegram, Logout) */
     .menu{
       margin:14px 0;
       background:var(--card);
@@ -97,50 +97,31 @@
     }
     .menuItem{
       display:flex;align-items:center;gap:12px;
-      padding:12px 14px;border-bottom:1px solid #eee;cursor:pointer;
+      padding:12px 14px;border-bottom:1px solid rgba(255,255,255,0.06);cursor:pointer;
     }
     .menuItem:last-child{border-bottom:none}
     .miIcon{
-      width:28px;height:28px;border-radius:8px;background:#000;color:var(--accent);
+      width:30px;height:30px;border-radius:8px;background:#0f1216;color:var(--accent);
       display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;
     }
     .miLabel{font-size:14px;color:var(--text)}
 
-    /* Small user info row */
-    .userInfo{
-      display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0;
-    }
-    .infoLine{font-size:13px;color:var(--muted)}
-    .infoStrong{color:var(--text);font-weight:700}
-
-    /* Referral link */
-    .ref{
-      margin:12px 0;
-    }
-    .ref .rlab{font-size:13px;color:var(--muted)}
-    .ref .rlink{
-      margin-top:6px;font-size:14px;color:var(--accent);word-break:break-word;
-    }
-
-    /* Bottom nav like GOLD */
+    /* Bottom nav styled like GOLD but mapped to your sections */
     .bottomNav{
-      position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid #eee;
+      position:fixed;left:0;right:0;bottom:0;background:#111418;border-top:1px solid rgba(255,255,255,0.06);
       display:grid;grid-template-columns:repeat(4,1fr);gap:0;padding:8px 10px;
-      box-shadow:0 -8px 16px rgba(0,0,0,0.06);
+      box-shadow:0 -10px 20px rgba(0,0,0,0.35);
     }
     .bnItem{
       display:flex;flex-direction:column;align-items:center;gap:6px;
-      color:#333;font-size:11px;cursor:pointer;
+      color:#e9ecf4;font-size:11px;cursor:pointer;
     }
     .bnIcon{
-      width:28px;height:28px;border-radius:8px;background:#000;color:var(--accent);
+      width:28px;height:28px;border-radius:8px;background:#0f1216;color:var(--accent);
       display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;
     }
 
-    /* Touch targets */
-    @media (hover:none){
-      .btn,.menuItem,.bnItem{padding:12px}
-    }
+    @media (hover:none){ .btn,.menuItem,.bnItem{padding:12px} }
   </style>
 </head>
 <body>
@@ -150,125 +131,129 @@
       <div class="sub">VIP Privileges: Enabled • Level: Not assigned</div>
     </div>
 
-    <!-- User quick info like GOLD -->
+    <!-- User info -->
     <div class="userInfo">
       <div class="card">
-        <div class="infoLine">User</div>
-        <div class="infoStrong">Sadin11gps</div>
+        <div class="label">User</div>
+        <div class="value">Sadin11gps</div>
       </div>
       <div class="card">
-        <div class="infoLine">User ID</div>
-        <div class="infoStrong">#69</div>
+        <div class="label">User ID</div>
+        <div class="value">#69</div>
       </div>
     </div>
 
-    <!-- Main + Trading wallets -->
-    <div class="walletRow">
+    <!-- Your metrics -->
+    <div class="metrics">
       <div class="card">
-        <div class="label">Main Wallet</div>
-        <div class="value">$0.02</div>
+        <div class="label">Balance</div>
+        <div class="value">৳ 0.00</div>
       </div>
       <div class="card">
-        <div class="label">Trading Wallet</div>
-        <div class="value">$11.00</div>
+        <div class="label">Typing</div>
+        <div class="value">৳ 0.00</div>
+      </div>
+    </div>
+    <div class="metrics">
+      <div class="card">
+        <div class="label">Referrals</div>
+        <div class="value">0</div>
+      </div>
+      <div class="card">
+        <div class="label">Status</div>
+        <div class="value">Active</div>
       </div>
     </div>
 
-    <!-- Action buttons -->
+    <!-- Keep your two history buttons -->
     <div class="actions">
-      <div class="btn" data-action="deposit">Deposit</div>
-      <div class="btn" data-action="withdraw">Withdraw</div>
-      <div class="btn" data-action="records">Records</div>
-      <div class="btn" data-action="account">Account</div>
+      <div class="btn" data-action="task-history">Task History</div>
+      <div class="btn" data-action="withdraw-history">Withdraw History</div>
     </div>
 
-    <!-- Stats like GOLD -->
+    <!-- GOLD-style stats (optional mapping to your logic) -->
     <div class="stats">
       <div class="card stat">
         <div class="slabel">Total Deposit</div>
-        <div class="sval">$0.00</div>
+        <div class="sval">৳ 0.00</div>
       </div>
       <div class="card stat">
         <div class="slabel">Total Withdraw</div>
-        <div class="sval">$0.00</div>
+        <div class="sval">৳ 0.00</div>
       </div>
       <div class="card stat">
-        <div class="slabel">Today Profit</div>
-        <div class="sval">$0.02</div>
+        <div class="slabel">Today Earn</div>
+        <div class="sval">৳ 0.00</div>
       </div>
       <div class="card stat">
-        <div class="slabel">Total Profit</div>
-        <div class="sval">$0.02</div>
+        <div class="slabel">Total Earn</div>
+        <div class="sval">৳ 0.00</div>
       </div>
     </div>
 
-    <!-- Referral Earn -->
+    <!-- Referral earn card -->
     <div class="card stat refEarn">
       <div class="slabel">Referral Earn</div>
-      <div class="sval">$0.00</div>
+      <div class="sval">৳ 0.00</div>
     </div>
 
-    <!-- Middle menu list -->
-    <div class="menu">
-      <div class="menuItem" data-action="account-info">
-        <div class="miIcon">AI</div>
-        <div class="miLabel">Account Info</div>
-      </div>
-      <div class="menuItem" data-action="kyc-status">
-        <div class="miIcon">KYC</div>
-        <div class="miLabel">KYC Status</div>
-      </div>
-      <div class="menuItem" data-action="my-team">
-        <div class="miIcon">TM</div>
-        <div class="miLabel">My Team</div>
-      </div>
-      <div class="menuItem" data-action="withdraw-setting">
-        <div class="miIcon">WS</div>
-        <div class="miLabel">Withdraw Setting</div>
-      </div>
-      <div class="menuItem" data-action="apps">
-        <div class="miIcon">AP</div>
-        <div class="miLabel">Apps</div>
-      </div>
-    </div>
-
-    <!-- Referral link -->
+    <!-- Referral link (keep your pattern) -->
     <div class="card ref">
       <div class="rlab">Your Referral Link</div>
       <div class="rlink">https://best-earning-rds.netlify.app/register.html?ref=USER_ID</div>
     </div>
+
+    <!-- KEEP YOUR MENU ITEMS -->
+    <div class="menu">
+      <div class="menuItem" data-action="dashboard">
+        <div class="miIcon">DB</div><div class="miLabel">Dashboard</div>
+      </div>
+      <div class="menuItem" data-action="profile-settings">
+        <div class="miIcon">PS</div><div class="miLabel">Profile Settings</div>
+      </div>
+      <div class="menuItem" data-action="referral-users">
+        <div class="miIcon">RU</div><div class="miLabel">Referral Users</div>
+      </div>
+      <div class="menuItem" data-action="tasks">
+        <div class="miIcon">TS</div><div class="miLabel">Tasks</div>
+      </div>
+      <div class="menuItem" data-action="withdraw">
+        <div class="miIcon">WD</div><div class="miLabel">Withdraw</div>
+      </div>
+      <div class="menuItem" data-action="support">
+        <div class="miIcon">SP</div><div class="miLabel">Support</div>
+      </div>
+      <div class="menuItem" data-action="logout">
+        <div class="miIcon">LO</div><div class="miLabel">Logout</div>
+      </div>
+    </div>
   </div>
 
-  <!-- Bottom nav -->
+  <!-- Bottom nav mapped to your features -->
   <div class="bottomNav">
-    <div class="bnItem" data-action="home">
-      <div class="bnIcon">H</div>
-      <div>Home</div>
+    <div class="bnItem" data-action="dashboard">
+      <div class="bnIcon">H</div><div>Home</div>
     </div>
-    <div class="bnItem" data-action="deposit">
-      <div class="bnIcon">D</div>
-      <div>Deposit</div>
+    <div class="bnItem" data-action="tasks">
+      <div class="bnIcon">T</div><div>Tasks</div>
     </div>
     <div class="bnItem" data-action="withdraw">
-      <div class="bnIcon">W</div>
-      <div>Withdraw</div>
+      <div class="bnIcon">W</div><div>Withdraw</div>
     </div>
-    <div class="bnItem" data-action="mine">
-      <div class="bnIcon">M</div>
-      <div>Mine</div>
+    <div class="bnItem" data-action="profile-settings">
+      <div class="bnIcon">P</div><div>Profile</div>
     </div>
   </div>
 
   <script>
-    // Click hooks
-    document.addEventListener('click', (e)=>{
+    // Keep hooks simple — later you can route to pages
+    document.addEventListener('click',(e)=>{
       const el = e.target.closest('[data-action]');
       if(!el) return;
-      const action = el.getAttribute('data-action');
-      console.log('Clicked:', action);
-      // TODO: এখানে তোমার নিজস্ব JS রাউটিং/মডাল/পেজ লোডিং বসাও
+      const act = el.getAttribute('data-action');
+      console.log('Clicked:', act);
+      // TODO: তোমার পেজ রাউটিং / modal / link navigation এখানে বসাও
     });
   </script>
 </body>
 </html>
-
