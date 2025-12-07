@@ -11,8 +11,8 @@
       --text:#000;
       --gold:#d4af37;
       --accent:#ff3b30;
-      --shadow:0 6px 16px rgba(0,0,0,0.25);
-      --radius:14px;
+      --shadow:0 4px 12px rgba(0,0,0,0.15);
+      --radius:16px;
     }
     body{
       margin:0;
@@ -35,34 +35,20 @@
     .header h1{margin:0;font-size:20px}
     .header .sub{margin-top:6px;font-size:12px;color:#dcdcdc}
 
-    /* Pumpkin boxes with solid corner circles */
+    /* Pumpkin boxes */
     .card{
       background: var(--pumpkin);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 10px;
-      margin-bottom: 10px;
-      position: relative;
+      padding: 14px;
+      margin-bottom: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
-    .card::before,
-    .card::after {
-      content: "";
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #007bff; /* নীল */
-    }
-    .card::before {
-      top: 8px;
-      left: 8px;
-    }
-    .card::after {
-      bottom: 8px;
-      right: 8px;
-    }
-    .label{font-size:13px;color:#111}
-    .value{margin-top:4px;font-weight:700;font-size:16px;color:#000}
+    .label{font-size:14px;color:#222}
+    .value{margin-top:6px;font-weight:700;font-size:18px;color:#000}
 
     .metrics{
       display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0;
@@ -86,38 +72,22 @@
     .stats{
       display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0;
     }
-    .stat .slabel{font-size:13px;color:#111}
-    .stat .sval{margin-top:4px;font-size:15px;font-weight:700;color:#000}
+    .stat .slabel{font-size:14px;color:#222}
+    .stat .sval{margin-top:6px;font-size:16px;font-weight:700;color:#000}
     .refEarn .sval{color:var(--accent)}
 
-    /* Referral box with purple corner circles */
+    /* Referral box */
     .ref{
       background: #fff;
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      padding: 12px;
-      margin: 14px 0;
-      position: relative;
+      padding: 14px;
+      margin: 16px 0;
+      text-align: center;
     }
-    .ref::before,
-    .ref::after {
-      content: "";
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: purple; /* বেগুনি */
-    }
-    .ref::before {
-      top: 8px;
-      left: 8px;
-    }
-    .ref::after {
-      bottom: 8px;
-      right: 8px;
-    }
-    .rlab{font-size:13px;color:#111}
-    .rlink{margin-top:6px;font-size:14px;color:#28a745;word-break:break-word}
+    .rlab{font-size:14px;color:#222;font-weight:600}
+    .rbonus{font-size:13px;color:#444;margin-bottom:6px}
+    .rlink{margin-top:6px;font-size:15px;color:#28a745;word-break:break-word}
 
     /* Bottom nav */
     .bottomNav{
@@ -174,9 +144,10 @@
       <div class="sval">৳ 0.00</div>
     </div>
 
-    <!-- Referral link -->
+    <!-- Referral link box -->
     <div class="ref">
       <div class="rlab">Your Referral Link</div>
+      <div class="rbonus">প্রতি রেফারে 20 টাকা এবং VIP থেকে 30% পাবেন।</div>
       <div class="rlink">https://best-earning-rds.netlify.app/register.html?ref=USER_ID</div>
     </div>
   </div>
