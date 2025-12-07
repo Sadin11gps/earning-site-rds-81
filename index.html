@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>RDS Dashboard</title>
   <style>
-  body {
-    margin: 0;
-    font-family: sans-serif;
-    background: #fff9e6; /* হালকা হলুদ + মিষ্টি ব্যাকগ্রাউন্ড */
-    color: #111;
-  }
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #fff9e6; /* হালকা হলুদ + মিষ্টি ব্যাকগ্রাউন্ড */
+      color: #111;
+    }
     .container {
       max-width: 480px;
       margin: auto;
@@ -47,6 +47,22 @@
       margin-top: 4px;
       color: #111;
     }
+    .buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .btn {
+      background: #000;
+      color: #d00; /* কালো ভিতরে লাল লেখা */
+      padding: 12px;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
     .referral {
       background: #fff;
       padding: 12px;
@@ -63,22 +79,6 @@
       font-size: 14px;
       word-break: break-all;
       color: #d00;
-    }
-    .buttons {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-    .btn {
-      background: #000;
-      color: #d00;
-      padding: 12px;
-      border-radius: 10px;
-      text-align: center;
-      font-weight: bold;
-      cursor: pointer;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     .menu {
       background: #fff;
@@ -126,6 +126,7 @@
       <h1>Free Task Earn</h1>
     </div>
 
+    <!-- Metrics -->
     <div class="metrics">
       <div class="metric">
         <label>Balance</label>
@@ -145,16 +146,19 @@
       </div>
     </div>
 
+    <!-- Buttons -->
     <div class="buttons">
       <div class="btn" data-action="task-history">Task History</div>
       <div class="btn" data-action="withdraw-history">Withdraw History</div>
     </div>
 
+    <!-- Referral -->
     <div class="referral">
       <label>Your Referral Link</label>
-      <div class="link">http://yourdomain.com/register.php?ref=ZDU6ZUMM</div>
+      <div class="link">https://rds-earning-site.netlify.app/register.html?ref=USER_ID</div>
     </div>
 
+    <!-- Menu -->
     <div class="menu">
       <h3>Menu</h3>
       <div class="menu-item" data-action="dashboard">
@@ -189,14 +193,17 @@
   </div>
 
   <script>
+    // প্রতিটি বাটন/আইকনের জন্য আলাদা হুক
     document.addEventListener('click', (e)=>{
       const el = e.target.closest('[data-action]');
       if(!el) return;
       const action = el.getAttribute('data-action');
       console.log('Clicked:', action);
-      // তুমি এখানে নিজের JS ফাংশন কল করতে পারো
+      // এখানে তুমি আলাদা কোড বসাবে
+      // উদাহরণ:
+      // if(action==='withdraw'){ openWithdrawPage(); }
+      // if(action==='task-history'){ showTaskHistory(); }
     });
   </script>
 </body>
 </html>
-
