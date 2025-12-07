@@ -7,8 +7,8 @@
   <style>
     body {
       margin: 0;
-      font-family: sans-serif;
-      background: #fff9e6; /* হালকা হলুদ + মিষ্টি ব্যাকগ্রাউন্ড */
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff8dc; /* হালকা সোনালি */
       color: #111;
     }
     .container {
@@ -17,31 +17,34 @@
       padding: 16px;
     }
     .header {
+      background: #222;
+      color: #ffd700;
       text-align: center;
+      padding: 14px;
+      border-radius: 12px;
       margin-bottom: 20px;
     }
     .header h1 {
-      font-size: 22px;
       margin: 0;
-      color: #222;
+      font-size: 22px;
     }
-    .metrics {
+    .wallets {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
       margin-bottom: 20px;
     }
-    .metric {
+    .wallet {
       background: #fff;
       border-radius: 10px;
       padding: 12px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    .metric label {
+    .wallet label {
       font-size: 13px;
       color: #555;
     }
-    .metric .value {
+    .wallet .value {
       font-size: 18px;
       font-weight: bold;
       margin-top: 4px;
@@ -55,7 +58,7 @@
     }
     .btn {
       background: #000;
-      color: #d00; /* কালো ভিতরে লাল লেখা */
+      color: #d00;
       padding: 12px;
       border-radius: 10px;
       text-align: center;
@@ -123,42 +126,38 @@
 <body>
   <div class="container">
     <div class="header">
-      <h1>Free Task Earn</h1>
+      <h1>GOLD AI BOT</h1>
     </div>
 
-    <!-- Metrics -->
-    <div class="metrics">
-      <div class="metric">
-        <label>Balance</label>
-        <div class="value">৳ 0.00</div>
+    <div class="wallets">
+      <div class="wallet">
+        <label>Main Wallet</label>
+        <div class="value">$0.02</div>
       </div>
-      <div class="metric">
-        <label>Typing</label>
-        <div class="value">৳ 0.00</div>
+      <div class="wallet">
+        <label>Trading Wallet</label>
+        <div class="value">$11.00</div>
       </div>
-      <div class="metric">
-        <label>Referrals</label>
-        <div class="value">0</div>
+      <div class="wallet">
+        <label>Today Profit</label>
+        <div class="value">$0.02</div>
       </div>
-      <div class="metric">
-        <label>User ID</label>
-        <div class="value">#69</div>
+      <div class="wallet">
+        <label>Total Profit</label>
+        <div class="value">$0.02</div>
       </div>
     </div>
 
-    <!-- Buttons -->
     <div class="buttons">
       <div class="btn" data-action="task-history">Task History</div>
       <div class="btn" data-action="withdraw-history">Withdraw History</div>
     </div>
 
-    <!-- Referral -->
     <div class="referral">
       <label>Your Referral Link</label>
       <div class="link">https://rds-earning-site.netlify.app/register.html?ref=USER_ID</div>
     </div>
 
-    <!-- Menu -->
     <div class="menu">
       <h3>Menu</h3>
       <div class="menu-item" data-action="dashboard">
@@ -193,13 +192,12 @@
   </div>
 
   <script>
-    // প্রতিটি বাটন/আইকনের জন্য আলাদা হুক
     document.addEventListener('click', (e)=>{
       const el = e.target.closest('[data-action]');
       if(!el) return;
       const action = el.getAttribute('data-action');
       console.log('Clicked:', action);
-      // এখানে তুমি আলাদা কোড বসাবে
+      // এখানে তুমি আলাদা JS ফাংশন বসাবে
       // উদাহরণ:
       // if(action==='withdraw'){ openWithdrawPage(); }
       // if(action==='task-history'){ showTaskHistory(); }
@@ -207,3 +205,4 @@
   </script>
 </body>
 </html>
+
