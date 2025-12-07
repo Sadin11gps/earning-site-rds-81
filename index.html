@@ -6,19 +6,17 @@
   <title>•EARNING × RDS TEAM•</title>
   <style>
     :root{
-      --bg:#1b1e24;           /* dark background */
-      --card:#ffb347;         /* মিষ্টি কুমড়ার মতো box color */
-      --text:#000;            /* black text inside orange boxes */
-      --muted:#b8bdc7;        /* secondary text */
-      --gold:#d4af37;         /* header gold accent */
-      --accent:#ff3b30;       /* red accent */
+      --bg:#1b1e24;
+      --pumpkin:#ffb347;   /* মিষ্টি কুমড়া */
+      --text:#000;
+      --gold:#d4af37;
+      --accent:#ff3b30;
       --shadow:0 6px 16px rgba(0,0,0,0.25);
-      --radius:16px;
+      --radius:14px;
     }
-    *{box-sizing:border-box}
     body{
       margin:0;
-      font-family: "Segoe UI", system-ui, -apple-system, Arial;
+      font-family:"Segoe UI",system-ui;
       background:var(--bg);
       color:#f5f7fb;
     }
@@ -29,7 +27,7 @@
       background:#111418;
       color:var(--gold);
       border-radius:var(--radius);
-      padding:16px 18px;
+      padding:16px;
       text-align:center;
       box-shadow:var(--shadow);
       margin:10px 0 14px;
@@ -37,18 +35,29 @@
     .header h1{margin:0;font-size:20px}
     .header .sub{margin-top:6px;font-size:12px;color:#dcdcdc}
 
-    /* Card boxes for Balance, Typing, Referrals, etc. */
+    /* Pumpkin boxes smaller + blue circles */
     .card{
-      background:var(--card);
+      background:var(--pumpkin);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
-      padding:14px;
+      padding:10px;
+      margin-bottom:10px;
+      position:relative;
     }
+    .card::before,.card::after{
+      content:"";
+      position:absolute;
+      width:10px;height:10px;
+      border-radius:50%;
+      background:#007bff; /* নীল circle */
+    }
+    .card::before{top:-5px;left:-5px}
+    .card::after{bottom:-5px;right:-5px}
     .label{font-size:13px;color:#111}
-    .value{margin-top:6px;font-weight:700;font-size:18px;color:#000}
+    .value{margin-top:4px;font-weight:700;font-size:16px;color:#000}
 
     .metrics{
-      display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0;
+      display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0;
     }
 
     /* History buttons */
@@ -63,33 +72,45 @@
       border-radius:12px;
       font-weight:700;
       box-shadow:var(--shadow);
-      cursor:pointer;
     }
 
     /* Stats */
     .stats{
-      display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0;
+      display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0;
     }
     .stat .slabel{font-size:13px;color:#111}
-    .stat .sval{margin-top:6px;font-size:16px;font-weight:700;color:#000}
+    .stat .sval{margin-top:4px;font-size:15px;font-weight:700;color:#000}
     .refEarn .sval{color:var(--accent)}
 
-    /* Referral link */
-    .ref{margin:14px 0}
-    .ref .rlab{font-size:13px;color:#111}
-    .ref .rlink{margin-top:6px;font-size:14px;color:var(--accent);word-break:break-word}
+    /* Referral box */
+    .ref{
+      background:#fff;
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:12px;
+      margin:14px 0;
+      position:relative;
+    }
+    .ref::before,.ref::after{
+      content:"";
+      position:absolute;
+      width:10px;height:10px;
+      border-radius:50%;
+      background:purple; /* বেগুনি circle */
+    }
+    .ref::before{top:-5px;left:-5px}
+    .ref::after{bottom:-5px;right:-5px}
+    .rlab{font-size:13px;color:#111}
+    .rlink{margin-top:6px;font-size:14px;color:#28a745;word-break:break-word}
 
-    /* Bottom nav with emoji icons */
+    /* Bottom nav */
     .bottomNav{
       position:fixed;left:0;right:0;bottom:0;background:#111418;
-      display:grid;grid-template-columns:repeat(4,1fr);padding:8px 10px;
-      box-shadow:0 -10px 20px rgba(0,0,0,0.35);
+      display:flex;justify-content:space-around;align-items:center;
+      padding:8px 6px;box-shadow:0 -10px 20px rgba(0,0,0,0.35);
     }
-    .bnItem{
-      display:flex;flex-direction:column;align-items:center;gap:6px;
-      color:#e9ecf4;font-size:11px;cursor:pointer;
-    }
-    .bnIcon{font-size:20px}
+    .bnItem{display:flex;flex-direction:column;align-items:center;font-size:11px;color:#e9ecf4}
+    .bnIcon{font-size:18px}
   </style>
 </head>
 <body>
@@ -101,38 +122,20 @@
 
     <!-- User info -->
     <div class="metrics">
-      <div class="card">
-        <div class="label">User</div>
-        <div class="value">Sadin11gps</div>
-      </div>
-      <div class="card">
-        <div class="label">User ID</div>
-        <div class="value">#69</div>
-      </div>
+      <div class="card"><div class="label">User</div><div class="value">Sadin11gps</div></div>
+      <div class="card"><div class="label">User ID</div><div class="value">#69</div></div>
     </div>
 
-    <!-- Balance / Typing -->
+    <!-- Balance / Task -->
     <div class="metrics">
-      <div class="card">
-        <div class="label">Balance</div>
-        <div class="value">৳ 0.00</div>
-      </div>
-      <div class="card">
-        <div class="label">Typing</div>
-        <div class="value">৳ 0.00</div>
-      </div>
+      <div class="card"><div class="label">Balance</div><div class="value">৳ 0.00</div></div>
+      <div class="card"><div class="label">Task</div><div class="value">৳ 0.00</div></div>
     </div>
 
     <!-- Referrals / Status -->
     <div class="metrics">
-      <div class="card">
-        <div class="label">Referrals</div>
-        <div class="value">0</div>
-      </div>
-      <div class="card">
-        <div class="label">Status</div>
-        <div class="value">Active</div>
-      </div>
+      <div class="card"><div class="label">Referrals</div><div class="value">0</div></div>
+      <div class="card"><div class="label">Status</div><div class="value">Active</div></div>
     </div>
 
     <!-- History buttons -->
@@ -143,22 +146,10 @@
 
     <!-- Stats -->
     <div class="stats">
-      <div class="card stat">
-        <div class="slabel">Total Deposit</div>
-        <div class="sval">৳ 0.00</div>
-      </div>
-      <div class="card stat">
-        <div class="slabel">Total Withdraw</div>
-        <div class="sval">৳ 0.00</div>
-      </div>
-      <div class="card stat">
-        <div class="slabel">Today Earn</div>
-        <div class="sval">৳ 0.00</div>
-      </div>
-      <div class="card stat">
-        <div class="slabel">Total Earn</div>
-        <div class="sval">৳ 0.00</div>
-      </div>
+      <div class="card stat"><div class="slabel">Total Deposit</div><div class="sval">৳ 0.00</div></div>
+      <div class="card stat"><div class="slabel">Total Withdraw</div><div class="sval">৳ 0.00</div></div>
+      <div class="card stat"><div class="slabel">Today Earn</div><div class="sval">৳ 0.00</div></div>
+      <div class="card stat"><div class="slabel">Total Earn</div><div class="sval">৳ 0.00</div></div>
     </div>
 
     <!-- Referral Earn -->
@@ -168,29 +159,19 @@
     </div>
 
     <!-- Referral link -->
-    <div class="card ref">
+    <div class="ref">
       <div class="rlab">Your Referral Link</div>
       <div class="rlink">https://best-earning-rds.netlify.app/register.html?ref=USER_ID</div>
     </div>
   </div>
 
-  <!-- Bottom nav with emoji icons -->
-<div class="bottomNav">
-  <div class="bnItem">
-    <div class="bnIcon">🏠</div><div>Home</div>
+  <!-- Bottom nav -->
+  <div class="bottomNav">
+    <div class="bnItem"><div class="bnIcon">🏠</div>Home</div>
+    <div class="bnItem"><div class="bnIcon">📋</div>Tasks</div>
+    <div class="bnItem"><div class="bnIcon">✨</div>VIP</div>
+    <div class="bnItem"><div class="bnIcon">💸</div>Withdraw</div>
+    <div class="bnItem"><div class="bnIcon">👤</div>Profile</div>
   </div>
-  <div class="bnItem">
-    <div class="bnIcon">📋</div><div>Tasks</div>
-  </div>
-  <div class="bnItem">
-    <div class="bnIcon">✨</div><div>VIP</div>
-  </div>
-  <div class="bnItem">
-    <div class="bnIcon">💸</div><div>Withdraw</div>
-  </div>
-  <div class="bnItem">
-    <div class="bnIcon">👤</div><div>Profile</div>
-  </div>
-</div>
 </body>
 </html>
