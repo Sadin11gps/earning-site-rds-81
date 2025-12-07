@@ -7,7 +7,7 @@
   <style>
     :root{
       --bg:#1b1e24;
-      --pumpkin:#ffb347;
+      --pumpkin:#ffb347;   /* মিষ্টি কুমড়া */
       --text:#000;
       --gold:#d4af37;
       --accent:#ff3b30;
@@ -35,18 +35,31 @@
     .header h1{margin:0;font-size:20px}
     .header .sub{margin-top:6px;font-size:12px;color:#dcdcdc}
 
-    /* Pumpkin boxes with glossy blue corner circles */
+    /* Pumpkin boxes with solid corner circles */
     .card{
-      background:
-        radial-gradient(circle 6px at 10px 10px, #007bff 0%, #66b2ff 40%, #007bff 100%),
-        radial-gradient(circle 6px at calc(100% - 10px) 10px, #007bff 0%, #66b2ff 40%, #007bff 100%),
-        radial-gradient(circle 6px at 10px calc(100% - 10px), #007bff 0%, #66b2ff 40%, #007bff 100%),
-        radial-gradient(circle 6px at calc(100% - 10px) calc(100% - 10px), #007bff 0%, #66b2ff 40%, #007bff 100%),
-        linear-gradient(var(--pumpkin), var(--pumpkin));
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:10px;
-      margin-bottom:10px;
+      background: var(--pumpkin);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 10px;
+      margin-bottom: 10px;
+      position: relative;
+    }
+    .card::before,
+    .card::after {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #007bff; /* নীল */
+    }
+    .card::before {
+      top: 8px;
+      left: 8px;
+    }
+    .card::after {
+      bottom: 8px;
+      right: 8px;
     }
     .label{font-size:13px;color:#111}
     .value{margin-top:4px;font-weight:700;font-size:16px;color:#000}
@@ -77,18 +90,31 @@
     .stat .sval{margin-top:4px;font-size:15px;font-weight:700;color:#000}
     .refEarn .sval{color:var(--accent)}
 
-    /* Referral box with glossy purple corner circles */
+    /* Referral box with purple corner circles */
     .ref{
-      background:
-        radial-gradient(circle 6px at 10px 10px, purple 0%, #d580ff 40%, purple 100%),
-        radial-gradient(circle 6px at calc(100% - 10px) 10px, purple 0%, #d580ff 40%, purple 100%),
-        radial-gradient(circle 6px at 10px calc(100% - 10px), purple 0%, #d580ff 40%, purple 100%),
-        radial-gradient(circle 6px at calc(100% - 10px) calc(100% - 10px), purple 0%, #d580ff 40%, purple 100%),
-        linear-gradient(#fff, #fff);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:12px;
-      margin:14px 0;
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 12px;
+      margin: 14px 0;
+      position: relative;
+    }
+    .ref::before,
+    .ref::after {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: purple; /* বেগুনি */
+    }
+    .ref::before {
+      top: 8px;
+      left: 8px;
+    }
+    .ref::after {
+      bottom: 8px;
+      right: 8px;
     }
     .rlab{font-size:13px;color:#111}
     .rlink{margin-top:6px;font-size:14px;color:#28a745;word-break:break-word}
