@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>RDS Dashboard</title>
+  <title>•EARNING × RDS TEAM •</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #fff8dc; /* হালকা সোনালি */
+      background: #fff8dc;
       color: #111;
     }
     .container {
@@ -28,23 +28,23 @@
       margin: 0;
       font-size: 22px;
     }
-    .wallets {
+    .metrics {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
       margin-bottom: 20px;
     }
-    .wallet {
+    .metric {
       background: #fff;
       border-radius: 10px;
       padding: 12px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    .wallet label {
+    .metric label {
       font-size: 13px;
       color: #555;
     }
-    .wallet .value {
+    .metric .value {
       font-size: 18px;
       font-weight: bold;
       margin-top: 4px;
@@ -80,7 +80,7 @@
     .referral .link {
       margin-top: 6px;
       font-size: 14px;
-      word-break: break-all;
+      word-break: break-word;
       color: #d00;
     }
     .menu {
@@ -126,25 +126,25 @@
 <body>
   <div class="container">
     <div class="header">
-      <h1>GOLD AI BOT</h1>
+      <h1>•EARNING × RDS TEAM •</h1>
     </div>
 
-    <div class="wallets">
-      <div class="wallet">
-        <label>Main Wallet</label>
-        <div class="value">$0.02</div>
+    <div class="metrics">
+      <div class="metric">
+        <label>Balance</label>
+        <div class="value">৳ 0.00</div>
       </div>
-      <div class="wallet">
-        <label>Trading Wallet</label>
-        <div class="value">$11.00</div>
+      <div class="metric">
+        <label>Typing</label>
+        <div class="value">৳ 0.00</div>
       </div>
-      <div class="wallet">
-        <label>Today Profit</label>
-        <div class="value">$0.02</div>
+      <div class="metric">
+        <label>Referrals</label>
+        <div class="value">0</div>
       </div>
-      <div class="wallet">
-        <label>Total Profit</label>
-        <div class="value">$0.02</div>
+      <div class="metric">
+        <label>User ID</label>
+        <div class="value">#69</div>
       </div>
     </div>
 
@@ -198,9 +198,6 @@
       const action = el.getAttribute('data-action');
       console.log('Clicked:', action);
       // এখানে তুমি আলাদা JS ফাংশন বসাবে
-      // উদাহরণ:
-      // if(action==='withdraw'){ openWithdrawPage(); }
-      // if(action==='task-history'){ showTaskHistory(); }
     });
   </script>
 </body>
