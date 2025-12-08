@@ -1,102 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>VIP Privileges</title>
-  <link rel="stylesheet" href="vip.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="vip.css" />
 </head>
 <body>
-  <h1>VIP Privileges</h1>
+  <div class="page">
+    <div class="header">
+      <h1>VIP Privileges</h1>
+      <div class="wallet">
+        <div class="item">
+          <span>Balance</span>
+          <span id="balanceTk" class="value">—</span>
+        </div>
+        <div class="item">
+          <span>VIP Level</span>
+          <span id="vipLevelText" class="value">Not assigned</span>
+        </div>
+      </div>
+    </div>
 
-  <!-- VIP 1 -->
-  <div class="vip-card">
-    <h3>🏅 VIP_1 🏅</h3>
-    <p>Price: 300 Tk</p>
-    <p>Daily task: 10</p>
-    <p>Limit: 30 days</p>
-    <p>Total income: 1500 Tk</p>
-    <button onclick="initiatePurchase(1)">Buy Now</button>
+    <div class="cards">
+      <!-- VIP 1 -->
+      <div class="card vip1">
+        <div class="title">🥇 VIP_1</div>
+        <div class="row"><span class="label">Price</span><span class="val">300 Tk</span></div>
+        <div class="row"><span class="label">Daily task</span><span class="val">10</span></div>
+        <div class="row"><span class="label">Limit</span><span class="val">30 days</span></div>
+        <div class="row"><span class="label">Total income</span><span class="val">1500 Tk</span></div>
+        <a class="btn" onclick="initiatePurchase(1)">Buy Now</a>
+      </div>
+
+      <!-- VIP 2 -->
+      <div class="card vip2">
+        <div class="title">🥈 VIP_2</div>
+        <div class="row"><span class="label">Price</span><span class="val">600 Tk</span></div>
+        <div class="row"><span class="label">Daily task</span><span class="val">15</span></div>
+        <div class="row"><span class="label">Limit</span><span class="val">30 days</span></div>
+        <div class="row"><span class="label">Total income</span><span class="val">2250 Tk</span></div>
+        <a class="btn" onclick="initiatePurchase(2)">Buy Now</a>
+      </div>
+
+      <!-- VIP 3 -->
+      <div class="card vip3">
+        <div class="title">🥉 VIP_3</div>
+        <div class="row"><span class="label">Cash back</span><span class="val">30 Tk</span></div>
+        <div class="row"><span class="label">Price</span><span class="val">1000 Tk</span></div>
+        <div class="row"><span class="label">Daily task</span><span class="val">22</span></div>
+        <div class="row"><span class="label">Limit</span><span class="val">30 days</span></div>
+        <div class="row"><span class="label">Total income</span><span class="val">3300 Tk</span></div>
+        <a class="btn" onclick="initiatePurchase(3)">Buy Now</a>
+      </div>
+
+      <!-- VIP 4 -->
+      <div class="card vip4">
+        <div class="title">🥉 VIP_4</div>
+        <div class="row"><span class="label">Cash back</span><span class="val">70 Tk</span></div>
+        <div class="row"><span class="label">Price</span><span class="val">2000 Tk</span></div>
+        <div class="row"><span class="label">Daily task</span><span class="val">30</span></div>
+        <div class="row"><span class="label">Limit</span><span class="val">30 days</span></div>
+        <div class="row"><span class="label">Total income</span><span class="val">4500 Tk</span></div>
+        <a class="btn" onclick="initiatePurchase(4)">Buy Now</a>
+      </div>
+
+      <!-- VIP 5 -->
+      <div class="card vip5">
+        <div class="title">🏅 VIP_5</div>
+        <div class="row"><span class="label">Price</span><span class="val">4000 Tk</span></div>
+        <div class="row"><span class="label">Daily task</span><span class="val">40</span></div>
+        <div class="row"><span class="label">Limit</span><span class="val">30 days</span></div>
+        <div class="row"><span class="label">Total income</span><span class="val">6000 Tk</span></div>
+        <a class="btn" onclick="initiatePurchase(5)">Buy Now</a>
+      </div>
+
+      <!-- VIP 6 -->
+      <div class="card vip6">
+        <div class="title">🏅 VIP_6</div>
+        <div class="row"><span class="label">Price</span><span class="val">6000 Tk</span></div>
+        <div class="row"><span class="label">Daily task</span><span class="val">50</span></div>
+        <div class="row"><span class="label">Limit</span><span class="val">30 days</span></div>
+        <div class="row"><span class="label">Total income</span><span class="val">9000 Tk</span></div>
+        <a class="btn" onclick="initiatePurchase(6)">Buy Now</a>
+      </div>
+
+      <!-- VIP 7 -->
+      <div class="card vip7">
+        <div class="title">🌟 VIP_7</div>
+        <div class="row"><span class="label">Price</span><span class="val">9000 Tk</span></div>
+        <a class="btn" onclick="initiatePurchase(7)">Buy Now</a>
+      </div>
+
+      <!-- VIP 8 -->
+      <div class="card vip8">
+        <div class="title">🌟 VIP_8</div>
+        <div class="row"><span class="label">Price</span><span class="val">10000 Tk</span></div>
+        <a class="btn" onclick="initiatePurchase(8)">Buy Now</a>
+      </div>
+    </div>
   </div>
 
-  <!-- VIP 2 -->
-  <div class="vip-card">
-    <h3>🥈 VIP_2 🥈</h3>
-    <p>Price: 600 Tk</p>
-    <p>Daily task: 15</p>
-    <p>Limit: 30 days</p>
-    <p>Total income: 2250 Tk</p>
-    <button onclick="initiatePurchase(2)">Buy Now</button>
-  </div>
-
-  <!-- VIP 3 -->
-  <div class="vip-card">
-    <h3>🥉 VIP_3 🥉</h3>
-    <p>Cash back: 30 Tk</p>
-    <p>Price: 1000 Tk</p>
-    <p>Daily task: 22</p>
-    <p>Limit: 30 days</p>
-    <p>Total income: 3300 Tk</p>
-    <button onclick="initiatePurchase(3)">Buy Now</button>
-  </div>
-
-  <!-- VIP 4 -->
-  <div class="vip-card">
-    <h3>🏅 VIP_4 🏅</h3>
-    <p>Cash back: 70 Tk</p>
-    <p>Price: 2000 Tk</p>
-    <p>Daily task: 30</p>
-    <p>Limit: 30 days</p>
-    <p>Total income: 4500 Tk</p>
-    <button onclick="initiatePurchase(4)">Buy Now</button>
-  </div>
-
-  <!-- VIP 5 -->
-  <div class="vip-card">
-    <h3>🎖️ VIP_5 🎖️</h3>
-    <p>Price: 4000 Tk</p>
-    <p>Daily task: 40</p>
-    <p>Limit: 30 days</p>
-    <p>Total income: 6000 Tk</p>
-    <button onclick="initiatePurchase(5)">Buy Now</button>
-  </div>
-
-  <!-- VIP 6 -->
-  <div class="vip-card">
-    <h3>🎖️ VIP_6 🎖️</h3>
-    <p>Price: 6000 Tk</p>
-    <p>Daily task: 50</p>
-    <p>Limit: 30 days</p>
-    <p>Total income: 9000 Tk</p>
-    <button onclick="initiatePurchase(6)">Buy Now</button>
-  </div>
-
-  <!-- VIP 7 -->
-  <div class="vip-card">
-    <h3>🌟 VIP_7 🌟</h3>
-    <p>Price: 8000 Tk</p>
-    <p>Daily task: 60</p>
-    <p>Limit: 30 days</p>
-    <p>Total income: 12000 Tk</p>
-    <button onclick="initiatePurchase(7)">Buy Now</button>
-  </div>
-
-  <!-- VIP 8 -->
-  <div class="vip-card">
-    <h3>🌟 VIP_8 🌟</h3>
-    <p>Price: 10000 Tk</p>
-    <p>Daily task: 70</p>
-    <p>Limit: 30 days</p>
-    <p>Total income: 15000 Tk</p>
-    <button onclick="initiatePurchase(8)">Buy Now</button>
-  </div>
-
-  <!-- Wallet info -->
-  <div id="walletBox">
-    <strong>Balance:</strong> <span id="balanceTk">—</span> Tk <br>
-    <strong>VIP Level:</strong> <span id="vipLevelText">Not assigned</span>
-  </div>
-
-  <!-- Load JS -->
   <script src="vip.js"></script>
 </body>
 </html>
