@@ -1,35 +1,72 @@
-// Demo balance (backend থেকে আসবে)
-let userBalance = 0;
-let userVipLevel = null;
+// vip.js
 
-const VIP_PRICES = {
-  1: 300,
-  2: 600,
-  3: 1000,
-  4: 2000,
-  5: 3000,
-  6: 4500,
-  7: 7000,
-  8: 15000,
-};
+const API_BASE = "/api";
 
-function updateWalletUI() {
-  document.getElementById("balanceTk").textContent = userBalance;
-  document.getElementById("vipLevelText").textContent = userVipLevel ? `VIP ${userVipLevel}` : "Not assigned";
+// Helper: get token from localStorage
+function getToken() {
+  return localStorage.getItem("token");
 }
 
-function initiatePurchase(level) {
-  const price = VIP_PRICES[level];
-  if (userBalance >= price) {
-    userBalance -= price;
-    userVipLevel = level;
-    alert(`✅ Purchase successful! You are now VIP ${level}. Remaining balance: ${userBalance} Tk`);
-    updateWalletUI();
-    // TODO: backend API call করে server এ update করতে হবে
-  } else {
-    alert(`❌ Not enough balance. Need ${price} Tk, you have ${userBalance} Tk`);
+// Update wallet UI
+function updateWalletUI(data) {
+  document.getElementById("balanceTk").textContent = data.balance + " Tk";
+  document.getElementById("vipLevelText").textContent = data.vipLevel ? "VIP_" + data.vipLevel : "Not assigned";
+  // চাইলে daily task limit দেখানোর জন্য আলাদা span যোগ করতে পারো
+  if (document.getElementById("dailyTaskLimit")) {
+    document.getElementById("dailyTaskLimit").textContent = data.dailyTaskLimit;
   }
 }
 
-document.addEventListener("DOMContentLoaded", updateWalletUI);
+// Load user info on page load
+async function loadUserInfo() {
+  const token = getToken();
+  if (!token) {
+    alert("Please login first");
+    window.location.href = "login.html";
+    return;
+  }
+
+  try {
+    const res = await fetch(`${API_BASE}/user/me`, {
+      headers: { Authorization: "Bearer " + token }
+    });
+    const data = await res.json();
+    if (res.ok) {
+      updateWalletUI(data);
+    } else {
+      alert(data.error || "Failed to load user info");
+    }
+  } catch (err) {
+    alert("Network error");
+  }
+}
+
+// Purchase VIP
+async function initiatePurchase(vipLevel) {
+  const token = getToken();
+  if (!token) {
+    alert("Please login first");
+    window.location.href = "login.html";
+    return;
+  }
+
+  try {
+    const res = await fetch(`${API_BASE}/purchase/${vipLevel}`, {
+      method: "POST",
+      headers: { Authorization: "Bearer " + token }
+    });
+    const data = await res.json();
+    if (res.ok) {
+      alert("Purchase successful!");
+      updateWalletUI(data);
+    } else {
+      alert(data.error || "Purchase failed");
+    }
+  } catch (err) {
+    alert("Network error");
+  }
+}
+
+// Run on page load
+window.addEventListener("DOMContentLoaded", loadUserInfo);
 
