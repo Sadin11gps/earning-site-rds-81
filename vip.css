@@ -43,6 +43,21 @@ body {
   color: #ffffff;
 }
 
+/* 🔥 Premium highlight for new fields */
+#dailyTaskLimit.value {
+  color: #FFD700; /* সোনালী রঙ */
+  font-size: 18px;
+  font-weight: 800;
+  text-shadow: 0 0 6px rgba(255,215,0,0.6);
+}
+
+#vipExpiryDate.value {
+  color: #FF6EC7; /* গোলাপি প্রিমিয়াম রঙ */
+  font-size: 15px;
+  font-weight: 700;
+  text-shadow: 0 0 5px rgba(255,110,199,0.6);
+}
+
 /* Card list spacing */
 .cards {
   display: grid;

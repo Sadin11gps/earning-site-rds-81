@@ -5,14 +5,31 @@
   <title>Login | Earning Site</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="auth.css" />
+  <style>
+    :root { color-scheme: light dark; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; background: #0f1320; color: #e6e7ff; }
+    .page { max-width: 520px; margin: 0 auto; padding: 18px 14px; }
+    .card { background: #1a1f34; border: 1px solid #2b3050; border-radius: 14px; padding: 16px; box-shadow: 0 8px 18px rgba(0,0,0,0.25); }
+    h1 { margin: 0 0 14px; font-size: 20px; }
+    .field { margin: 10px 0; }
+    .label { display: block; font-size: 14px; margin-bottom: 6px; color: #c9ccff; }
+    input { width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid #2b3050; background: #0f1320; color: #fff; }
+    button { width: 100%; margin-top: 12px; padding: 12px 14px; border: 1px solid #2b3050; border-radius: 10px; background: #6EC1E4; color: #0f1320; font-weight: 800; cursor: pointer; }
+    button:disabled { opacity: 0.6; cursor: not-allowed; }
+    .note { margin-top: 12px; font-size: 13px; color: #c9ccff; }
+    .error { background: #3b1a1a; border: 1px solid #8b2b2b; color: #ffd7d7; padding: 10px; border-radius: 10px; margin: 10px 0; display: none; }
+    .success { background: #153b21; border: 1px solid #2b8b4c; color: #d7ffdf; padding: 10px; border-radius: 10px; margin: 10px 0; display: none; }
+    .link { color: #6EC1E4; text-decoration: none; font-weight: 700; }
+  </style>
 </head>
 <body>
   <div class="page">
     <div class="card">
       <h1>Login</h1>
 
-      <div id="loginError" class="error" style="display:none;"></div>
-      <div id="loginSuccess" class="success" style="display:none;"></div>
+      <div id="loginError" class="error"></div>
+      <div id="loginSuccess" class="success"></div>
 
       <form id="loginForm" novalidate>
         <div class="field">
