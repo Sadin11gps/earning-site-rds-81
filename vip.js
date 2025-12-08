@@ -1,5 +1,5 @@
 // Demo balance (backend থেকে আসবে)
-let userBalance = 1200;
+let userBalance = 0;
 let userVipLevel = null;
 
 const VIP_PRICES = {
